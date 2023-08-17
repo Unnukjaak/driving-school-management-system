@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.js"></script>
+    <link href="/sidebars.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <title>All Driving Lessons</title>
+</head>
+
+<body>
+<div layout:fragment="content">
+
+    <h2 class="mb-4">All Driving Lessons</h2>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-xl-3 pb-3">
+
+                <div id="datepicker" th:data-date="${selectedDate}"></div>
+                <script>
+                    $(document).ready(function () {
+                        $('#datepicker').datepicker({
+                            format: 'dd.mm.yyyy',
+                            weekStart: 1,
+                            todayHighlight: true,
+                        }).on('changeDate', function () {
+                            const selectedDate = $('#datepicker').datepicker('getFormattedDate');
+                            window.open('/lessons?date=' + selectedDate, '_self');
+                        });
+                    });
+                </script>
+            </div>
+            <div class="col-lg-8 col-xl-9">
+                <div class="alert alert-primary" role="alert" th:if="${drivingLessonsList.size() == 0}">No lessons today</div>
+                <table th:if="${drivingLessonsList.size() > 0}" class="table table-sm">
+                    <thead>
+                    <th>Card nr:</th>
+                    <th>Topic</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th>Student</th>
+                    <th sec:authorize="hasAnyAuthority('TEACHER', 'ADMIN')">Add next lesson</th>
+                    </thead>
+                    <tbody th:each="drivinglesson : ${drivingLessonsList}">
+                    <tr>
+                        <td th:text="${drivinglesson.id}"></td>
+                        <td th:text="${drivinglesson.topic}"></td>
+                        <td th:text="${drivinglesson.startTime}"></td>
+                        <td>
+                            <span th:text="${drivinglesson.status}" th:classappend="${drivinglesson.statusCssClass}"
+                                  class="badge rounded-pill"></span>
+                        </td>
+                        <td th:text="${drivinglesson.studentFullName}"></td>
+                        <td sec:authorize="hasAnyAuthority('TEACHER', 'ADMIN')">
+                            <a th:href="@{'/lesson/create/' + ${drivinglesson.drivingCardId}}" class="btn btn-outline-success" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" tabindex="-1" role="button">+ Add lesson</a>
+                        </td>
+                    </tr>
+                    <tr sec:authorize="hasAnyAuthority('TEACHER', 'ADMIN')" class="table-warning" th:if="${drivinglesson.studentComment}">
+                        <td colspan="6">Student comment: <span th:text="${drivinglesson.studentComment}"></span></td>
+                    </tr>
+                    <tr sec:authorize="hasAuthority('STUDENT')" class="table-warning">
+                        <td colspan="6" class="p-2" style="text-align: right">
+                            <form method="post" th:action="@{'/lesson/comment/' + ${drivinglesson.id}}">
+                                <textarea placeholder="Write your comment for teacher here" class="form-control" name="comment" rows="2" th:text="${drivinglesson.studentComment}"></textarea>
+                                <input class="btn btn-outline-success m-2" type="submit" value="Save">
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

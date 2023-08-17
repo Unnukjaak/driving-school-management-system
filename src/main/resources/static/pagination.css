@@ -1,0 +1,6 @@
+/* Center the pagination bar container */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust as needed to set the desired vertical position */
+}

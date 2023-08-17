@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorate="layout">
+<head>
+    <title>Courses</title>
+    <link rel="stylesheet" type="text/css" href="/pagination.css">
+</head>
+
+<body>
+<div layout:fragment="content">
+    <h2>Courses</h2>
+    <br/>
+    <div sec:authorize="hasAuthority('ADMIN')">
+        <nav class="nav nav-pills flex-column flex-sm-row">
+            <a th:href="@{/admin/course/create}" type="button" class="btn btn-outline-success"> + Add new course </a>
+        </nav>
+    </div>
+    <br/>
+    <table class="table">
+        <thead>
+        <th>ID</th>
+        <th>Course name</th>
+        <th>Category</th>
+        <th>Course start</th>
+        <th>Course end</th>
+        <th>Teacher name</th>
+        <th sec:authorize="hasAuthority('ADMIN')">Edit</th>
+        <th>Status</th>
+        </thead>
+
+        <tbody>
+        <tr th:each="course : ${coursesList}">
+            <td th:text="${course.id}"></td>
+            <td><a th:href="@{'/admin/students?courseId=' + ${course.id}}" th:text="${course.courseName}"></a></td>
+            <td th:text="${course.category}"></td>
+            <td th:text="${course.startDate}"></td>
+            <td th:text="${course.endDate}"></td>
+            <td th:text="${course.teacherName}"></td>
+            <td sec:authorize="hasAuthority('ADMIN')">
+                <button type="button" class="btn btn-outline-secondary" fdprocessedid="4gfjwb"
+                        onclick="openCourseEditWindow(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-pencil-square" viewBox="0 0 16 16" style="vertical-align: middle;">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+                        <path fill-rule="evenodd"
+                              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
+                    </svg>
+                    <span class="visually-hidden">Button</span>
+                </button>
+            </td>
+            <td>
+                <span th:text="${course.status}" th:classappend="${course.statusCssClass}"
+                      class="badge rounded-pill"></span>
+            </td>
+            <script>
+                function openCourseEditWindow(button) {
+                    var row = button.parentNode.parentNode;
+
+                    var courseId = row.cells[0].innerText;
+
+                    window.open('http://localhost:8080/admin/course/' + courseId, '_self');
+                }
+            </script>
+        </tr>
+        </tbody>
+    </table>
+
+    <div th:if="${totalPages > 1}" class="pagination-container">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" th:if="${currentPage > 1}"
+                       th:href="@{'/page/' + ${currentPage - 1}}">Previous</a>
+                    <span class="page-link" th:unless="${currentPage > 1}">Previous</span>
+                </li>
+
+                <!-- Show the first page link -->
+                <li class="page-item" th:class="${currentPage == 1} ? 'active' : ''" th:if="${currentPage > 1}">
+                    <a class="page-link" th:if="${currentPage != 1}" th:href="@{'/page/' + ${currentPage - 1}}"
+                       th:text="${currentPage - 1}">1</a>
+                    <span class="page-link" th:unless="${currentPage != 1}" th:text="${currentPage - 1}">1</span>
+                </li>
+
+                <!-- Show the current page link -->
+                <li class="page-item active" aria-current="page">
+                    <span class="page-link" th:text="${currentPage}">2</span>
+                </li>
+
+                <!-- Show the next page link -->
+                <li class="page-item" th:class="${currentPage == totalPages} ? 'active' : ''"
+                    th:if="${currentPage < totalPages}">
+                    <a class="page-link" th:href="@{'/page/' + ${currentPage + 1}}" th:text="${currentPage + 1}">3</a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}}">Next</a>
+                    <span class="page-link" th:unless="${currentPage < totalPages}">Next</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+</div>
+</body>
+</html>
