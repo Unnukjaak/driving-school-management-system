@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4a83d003-cf84-4f5c-959a-aca9e87e566b" name="Changes" comment="Edit button for teachers and students">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/drivingschool/DrivingschoolApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/drivingschool/DrivingschoolApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bb357535-a694-4088-b506-154d25fa550a" />
+        <option name="url" value="https://github.com/StanislavTatarski/driving-school-management-system.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/ee/drivingschool/DrivingschoolApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/templates/index.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2T1hx66StwBzuEsgV1zCNERBqhF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Academy/mahdad/Spring and advance tests/spring-course",
+    "settings.editor.selected.configurable": "advanced.settings"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="DrivingschoolApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ee.drivingschool.DrivingschoolApplication" />
+      <module name="drivingschool" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.drivingschool.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DrivingschoolApplication" />
+        <item itemvalue="Application.DrivingschoolApplication" />
+        <item itemvalue="Application.DrivingschoolApplication" />
+        <item itemvalue="Application.DrivingschoolApplication" />
+        <item itemvalue="Application.DrivingschoolApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4a83d003-cf84-4f5c-959a-aca9e87e566b" name="Changes" comment="" />
+      <created>1690216737677</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690216737677</updated>
+    </task>
+    <task id="LOCAL-00001" summary="New branch Jaak">
+      <created>1690219361845</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690219361845</updated>
+    </task>
+    <task id="LOCAL-00002" summary="New branch Jaak">
+      <created>1690221191778</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1690221191778</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Edit button added to course list.">
+      <created>1690385513032</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690385513032</updated>
+    </task>
+    <task id="LOCAL-00004" summary="New nav bar icons&#10;Added nav bar urls to buttons">
+      <created>1690392251658</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690392251658</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Pagination started but not finished">
+      <created>1690475235765</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690475235765</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Pagination almost finished">
+      <created>1690820581048</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1690820581048</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Pagination finished">
+      <created>1690825471367</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1690825471367</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Pagination apperance improved and sidebar active tabs added">
+      <created>1691075379095</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1691075379095</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Pagination for students and teachers, also sidebar active tabs improved">
+      <created>1691431838838</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1691431838838</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Edit button for teachers and students">
+      <created>1691571502557</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1691571502557</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Edit button for teachers and students">
+      <created>1692281454932</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1692281454932</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New branch Jaak" />
+    <MESSAGE value="Edit button added to course list." />
+    <MESSAGE value="New nav bar icons&#10;Added nav bar urls to buttons" />
+    <MESSAGE value="Pagination started but not finished" />
+    <MESSAGE value="Pagination almost finished" />
+    <MESSAGE value="Pagination finished" />
+    <MESSAGE value="Pagination apperance improved and sidebar active tabs added" />
+    <MESSAGE value="Pagination for students and teachers, also sidebar active tabs improved" />
+    <MESSAGE value="Edit button for teachers and students" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit button for teachers and students" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
